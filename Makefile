@@ -23,3 +23,6 @@ clean:
 
 %.bam.bai: %.bam
 	samtools index $<
+
+%.dot.png: %.dot
+	dot -Tpng $< >$@
