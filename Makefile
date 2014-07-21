@@ -1,7 +1,11 @@
-all: sample.asqg sample.dot sample.sam
+ALL=sample.asqg sample.dot sample.sam \
+	sample.fa sample.fa.fai \
+	sample.bam sample.bam.bai
+
+all: $(ALL)
 
 clean:
-	rm -f sample.asqg sample.dot sample.sam
+	rm -f $(ALL)
 
 .PHONY: all clean
 .DELETE_ON_ERROR:
@@ -24,3 +28,9 @@ clean:
 
 %.dot.png: %.dot
 	dot -Tpng $< >$@
+
+%.fa: %.gfa
+	awk '$$1 == "S" { print ">" $$2 "\n" $$3 }' $< >$@
+
+%.fa.fai: %.fa
+	samtools faidx $<
