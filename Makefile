@@ -1,5 +1,3 @@
-k=4
-
 all: sample.asqg sample.dot sample.sam
 
 clean:
@@ -10,13 +8,13 @@ clean:
 .SECONDARY:
 
 %.asqg: %.gfa
-	abyss-todot --asqg -k$k $< >$@
+	abyss-todot --asqg $< >$@
 
 %.dot: %.gfa
-	abyss-todot --dot -k$k $< >$@
+	abyss-todot --dot $< >$@
 
 %.sam: %.gfa
-	abyss-todot --sam -k$k $< >$@
+	abyss-todot --sam $< >$@
 
 %.bam: %.sam
 	samtools view -Su $< |samtools sort - $*
