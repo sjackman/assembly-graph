@@ -1,6 +1,8 @@
 ALL=sample.asqg sample.dot sample.sam \
+	sample.dot.png \
 	sample.fa sample.fa.fai \
-	sample.bam sample.bam.bai
+	sample.bam sample.bam.bai \
+	loop.asqg loop.dot loop.sam loop.fa loop.fa.fai loop.dot.png
 
 all: $(ALL)
 
