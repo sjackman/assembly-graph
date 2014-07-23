@@ -10,3 +10,7 @@ Compare assembly graph file formats
 Render `sample.gv` using GraphViz.
 
 ![sample.gv](sample.gv.png)
+
+Render `loop.gv` using GraphViz.
+
+![loop.gv](loop.gv.png)
